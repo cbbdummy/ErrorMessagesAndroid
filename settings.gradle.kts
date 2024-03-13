@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ErrorMessageAndroid"
 include(":app")
- 
+include(":errormessagelib")

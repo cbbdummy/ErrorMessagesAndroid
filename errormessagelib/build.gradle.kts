@@ -1,3 +1,4 @@
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -36,6 +37,15 @@ android {
         dataBinding = true
     }
     buildToolsVersion = "34.0.0"
+
+    publishing {
+        publishing {
+            singleVariant("release") {
+                withSourcesJar()
+                withJavadocJar()
+            }
+        }
+    }
 }
 
 dependencies {
@@ -49,4 +59,18 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.airbnb.android:lottie:3.7.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0")
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.intelliswift.errormessagelib'
+            artifactId = 'errormessagelib'
+            version = '1.0.1'
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
 }

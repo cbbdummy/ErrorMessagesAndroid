@@ -47,7 +47,7 @@
       android:paddingRight="16dp"
       android:text="@string/retry"
       android:textAppearance="@style/TextAppearance.AppCompat.Button"
-      android:textColor="@color/blue"
+      android:textColor="@color/error_text_color"
       tools:drawableRight="@drawable/ic_refresh_light_blue_500_24dp" />
 
   </LinearLayout>

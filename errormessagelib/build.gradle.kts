@@ -63,13 +63,13 @@ dependencies {
 
 publishing {
     publications {
-        release(MavenPublication) {
-            groupId = 'com.intelliswift.errormessagelib'
-            artifactId = 'errormessagelib'
-            version = '1.0.1'
+        register<MavenPublication>("release") {
+            groupId = "com.github.cbbdummy"
+            artifactId = "errormessagelib"
+            version = "1.0.1"
 
             afterEvaluate {
-                from components.release
+                from(components["release"])
             }
         }
     }
